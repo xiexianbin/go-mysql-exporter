@@ -16,4 +16,4 @@
 .DS_Store
 .idea/
 .history
-go-mysql-exporter
+bin/

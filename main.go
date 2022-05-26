@@ -45,6 +45,7 @@ var (
 	password  string
 	db        string
 	dsn       string
+	version   bool
 )
 
 func init() {
@@ -54,6 +55,7 @@ func init() {
 	flag.StringVar(&user, "u", "root", "mysql user")
 	flag.StringVar(&password, "p", "root", "mysql password")
 	flag.StringVar(&db, "d", "mysql", "mysql db")
+	flag.BoolVar(&version, "v", false, "version info")
 	flag.Usage = func() {
 		fmt.Println(`Usage: mysql-exporter -addr 0.0.0.0:9306 -mysqlAddr 127.0.0.1:3306 -u root -p root -d mysql`)
 		flag.PrintDefaults()
@@ -66,6 +68,10 @@ func init() {
 func main() {
 	if h == true {
 		flag.Usage()
+		return
+	}
+	if version == true {
+		fmt.Println("v0.1.0")
 		return
 	}
 

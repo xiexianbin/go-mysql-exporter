@@ -1,22 +1,37 @@
 # go-mysql-exporter
 
+[![build-test](https://github.com/xiexianbin/go-mysql-exporter/actions/workflows/workflow.yaml/badge.svg)](https://github.com/xiexianbin/go-mysql-exporter/actions/workflows/workflow.yaml)
+[![GoDoc](https://godoc.org/github.com/xiexianbin/go-mysql-exporter?status.svg)](https://pkg.go.dev/github.com/xiexianbin/go-mysql-exporter)
+
 golang mysql-exporter demo, Learn to develop exporter as the goal.
 
+## Download
+
+- download
 ```
-$ go run main.go -h
+curl -Lfs -o main https://github.com/xiexianbin/go-mysql-exporter/releases/latest/download/mysql-exporter-{linux|darwin|windows}
+chmod +x mysql-exporter
+./mysql-exporter
+```
+
+## Help
+
+```
+$ mysql-exporter -h
 Usage: mysql-exporter -addr 0.0.0.0:9306 -mysqlAddr 127.0.0.1:3306 -u root -p root -d mysql
   -addr string
-        server url (default "0.0.0.0:9306")
+    	server url (default "0.0.0.0:9306")
   -d string
-        mysql db (default "mysql")
+    	mysql db (default "mysql")
   -help
-        show help message
+    	show help message
   -mysqlAddr string
-        mysql url (default "127.0.0.1:3306")
+    	mysql url (default "127.0.0.1:3306")
   -p string
-        mysql password (default "root")
+    	mysql password (default "root")
   -u string
-        mysql user (default "root")
+    	mysql user (default "root")
+  -v	version info
 ```
 
 ## mysql monitor sql
